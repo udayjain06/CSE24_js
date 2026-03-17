@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events Example</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+            margin: 100px auto;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style> 
+</head>
+<body>
+
+<div id="box">Hover / Click Me</div>
+
+<script>
+    let box = document.getElementById("box");
+
+    // Click event
+    box.onclick = function() {
+        box.innerHTML = "Clicked!";
+        box.style.backgroundColor = "green";
+    };
+
+    // Double click
+    box.ondblclick = function() {
+        box.innerHTML = "Double Clicked!";
+        box.style.backgroundColor = "orange";
+    };
+
+    // Mouse over
+    box.onmouseover = function() {
+        box.innerHTML = "Mouse Over";
+        box.style.backgroundColor = "yellow";
+    };
+
+    // Mouse out
+    box.onmouseout = function() {
+        box.innerHTML = "Mouse Out";
+        box.style.backgroundColor = "lightblue";
+    };
+
+    // Mouse down
+    box.onmousedown = function() {
+        box.innerHTML = "Mouse Down";
+    };
+
+    // Mouse up
+    box.onmouseup = function() {
+        box.innerHTML = "Mouse Up";
+    };
+</script>
+
+</body>
+</html>
