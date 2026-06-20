@@ -16,8 +16,8 @@ public class StudentController {
     public Student getStudent() {
         Student student =
                 new Student(101,
-                        "Lakshaya Kumar",
-                        "B.Tech CSE AI & ML");
+                        "Uday Jain",
+                        "B.Tech CSE");
 
         return student;
     }
