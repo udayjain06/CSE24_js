@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Timer</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        input, button {
+            padding: 8px;
+        }
+
+        #timerDisplay {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Countdown Timer App</h3>
+
+    <input type="number" id="secondsInput" placeholder="Enter seconds">
+
+    <button onclick="startCountdown()">Start Countdown</button>
+
+    <div id="timerDisplay"></div>
+
+    <script>
+
+        var timer;
+
+        function startCountdown() {
+
+            clearInterval(timer);
+
+            var sec = parseInt(document.getElementById("secondsInput").value);
+
+            if (isNaN(sec) || sec <= 0) {
+                document.getElementById("timerDisplay").innerHTML = "Enter valid seconds";
+                return;
+            }
+
+            document.getElementById("timerDisplay").innerHTML = sec;
+
+            timer = setInterval(function () {
+
+                sec--;
+
+                document.getElementById("timerDisplay").innerHTML = sec;
+
+                if (sec <= 0) {
+
+                    clearInterval(timer);
+
+                    document.getElementById("timerDisplay").innerHTML = "Time Up!";
+                }
+
+            }, 1000);
+
+        }
+
+    </script>
+
+</body>
+</html>
